@@ -2,12 +2,14 @@ version: "3"
 services:
  syslog:
   image: jurajbond/rsyslog
-  container_name: rsyslog01
+  container_name: log01
+
   ports: 
    - 541:541
  postfix:
   image: jurajbond/postfix
   container_name: smtp01
+  hostname: smtp01
   ports:
    - 25:25
   depends_on:
